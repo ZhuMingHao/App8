@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="App8.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App8"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:telerikGrid="using:Telerik.UI.Xaml.Controls.Grid"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <local:ViewModel/>
+    </Page.DataContext>
+    <telerikGrid:RadDataGrid
+            x:Name="DataGrid"
+            ItemsSource="{Binding DataList,Mode=TwoWay}">
+        <telerikGrid:RadDataGrid.Columns>
+            <telerikGrid:DataGridTemplateColumn Header="Data1" >
+                <telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+                    <DataTemplate>
+                        <TextBox Text="{Binding Data1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left"  VerticalAlignment="Center" MinWidth="100" />
+                    </DataTemplate>
+                </telerikGrid:DataGridTemplateColumn.CellContentTemplate>
+            </telerikGrid:DataGridTemplateColumn>
+            <telerikGrid:DataGridTextColumn Header="Data2" PropertyName="Data2" CanUserResize="False"/>
+            <telerikGrid:DataGridTextColumn Header="Data3"  PropertyName="Data3" CanUserResize="False" />
+
+        </telerikGrid:RadDataGrid.Columns>
+    </telerikGrid:RadDataGrid>
+
+</Page>
