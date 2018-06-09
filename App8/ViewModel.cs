@@ -66,7 +66,7 @@ namespace App8
         {
             get
             {
-                return _data3;
+                return _data1 + _data2;
             }
             set
             {
